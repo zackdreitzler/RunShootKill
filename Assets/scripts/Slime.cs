@@ -8,11 +8,10 @@ public class Slime : MonoBehaviour
     public float size;
 
     private float slimeSpeed;
+    private int slimeDamage;
     public EnemyHealth slimeHealth;
 
     public Slime childSlime;
-    
-
     private Transform player;
     
 
@@ -25,6 +24,16 @@ public class Slime : MonoBehaviour
     void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, slimeSpeed * Time.deltaTime);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        // Hit Player
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<damagable>().takeDamage(slimeDamage);
+
+        }
     }
 
     // Spawns 2 slimes half the size of the current slime
@@ -67,7 +76,7 @@ public class Slime : MonoBehaviour
             slimeSpeed = (16 - size) / 8;
             slimeHealth.health = (int)size * 5;
         }
+        slimeDamage = (int)size;
 
-       
     }
 }

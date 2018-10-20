@@ -22,14 +22,15 @@ public class BulletController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(this.gameObject.tag == "Enemy")
+        // Is it an enemy bullet?
+        if (this.gameObject.tag == "Enemy")
         {
-            
-            // bullet impact effect
-            GameObject impact = Instantiate(impactEffect, transform.position, transform.rotation);
-            Destroy(impact, 2f);
-            Destroy(gameObject);
-            
+            // Hit Player
+            if (other.gameObject.tag == "Player")
+            {
+                other.gameObject.GetComponent<damagable>().takeDamage(bulletDamage);
+
+            }
         }
         else {
 
@@ -38,11 +39,11 @@ public class BulletController : MonoBehaviour {
             {
                 other.gameObject.GetComponent<EnemyHealth>().takeDamage(bulletDamage);
 
-                // bullet impact effect
-                GameObject impact = Instantiate(impactEffect, transform.position, transform.rotation);
-                Destroy(impact, 2f);
-                Destroy(gameObject);
             }
         }
+        // bullet impact effect
+        GameObject impact = Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(impact, 2f);
+        Destroy(gameObject);
     }
 }
