@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,7 +58,7 @@ public class AutoGunEnemy : MonoBehaviour {
         }
        
         // accelerate backwards
-        if (Vector3.Distance(player.transform.position, this.transform.position) < 5)
+        if (Vector3.Distance(player.transform.position, this.transform.position) < 4)
         {
             if(AGECurrentSpeed > (-AGEMaxSpeed/2))
             {
@@ -68,7 +68,7 @@ public class AutoGunEnemy : MonoBehaviour {
         }
         
         // decellerate
-        else if (Vector3.Distance(player.transform.position, this.transform.position) < 5.5 || Vector3.Distance(player.transform.position, this.transform.position) > 12)
+        else if (Vector3.Distance(player.transform.position, this.transform.position) < 4.5 || Vector3.Distance(player.transform.position, this.transform.position) > 12)
         {
             if (AGECurrentSpeed > 0)
             {
@@ -80,7 +80,7 @@ public class AutoGunEnemy : MonoBehaviour {
         }
     
         // accelerate forwards
-        else if (Vector3.Distance(player.transform.position, this.transform.position) < 12)
+        else if (Vector3.Distance(player.transform.position, this.transform.position) < 14)
         {
            
             if (AGECurrentSpeed < AGEMaxSpeed)
