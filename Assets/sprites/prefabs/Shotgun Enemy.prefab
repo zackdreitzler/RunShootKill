@@ -169,13 +169,15 @@ MonoBehaviour:
   bullet: {fileID: 114380903447743624, guid: 247097bec4f59b04c923dbed038c35dc, type: 2}
   firePoint: {fileID: 4680395551592286}
   isFiring: 0
-  bulletSpeed: 5
+  bulletSpeed: 7
   timeBetweenShots: 0
   range: 8
   reloadTime: 2
-  gunDamage: 1
+  bulletSize: 0.1
+  gunDamage: 5
   inaccuracy: 20
   magazineSize: 8
+  tilt: 5
 --- !u!114 &114395159800916270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   slime: {fileID: 0}
+  slimeBoss: {fileID: 0}
 --- !u!212 &212222824510683470
 SpriteRenderer:
   m_ObjectHideFlags: 1

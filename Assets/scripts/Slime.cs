@@ -54,7 +54,7 @@ public class Slime : MonoBehaviour
     }
 
     // sets size, speed, and damage of slime
-    void setSlimeValues()
+    private void setSlimeValues()
     {
         if(size > 15)
         {

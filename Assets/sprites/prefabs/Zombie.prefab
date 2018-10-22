@@ -218,6 +218,7 @@ MonoBehaviour:
   zombieRB: {fileID: 50326842355345888}
   zombieSpeed: 1.5
   zombieRotateSpeed: 1
+  zombieDamage: 5
 --- !u!212 &212330837616876320
 SpriteRenderer:
   m_ObjectHideFlags: 1

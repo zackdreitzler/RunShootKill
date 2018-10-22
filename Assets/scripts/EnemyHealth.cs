@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public int health;
     public Slime slime;
+    public SlimeBoss slimeBoss;
 	
 	void Update () {
 		if (health <= 0 )
@@ -14,6 +15,10 @@ public class EnemyHealth : MonoBehaviour {
             if (slime != null)
             {
                 slime.spawnChildren();
+            }
+            else if (slimeBoss != null)
+            {
+                slimeBoss.spawnChildren();
             }
 
             Destroy(gameObject);

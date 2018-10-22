@@ -10,8 +10,9 @@ public class GunController : MonoBehaviour {
     public Transform firePoint;
 
     public bool isFiring;
-    public float bulletSpeed, timeBetweenShots, range, reloadTime;
+    public float bulletSpeed, timeBetweenShots, range, reloadTime, bulletSize;
     public int gunDamage, inaccuracy, magazineSize;
+    public int tilt;
 
     private int bulletsInMag;
     private bool reloading = false;
@@ -54,10 +55,11 @@ public class GunController : MonoBehaviour {
                 shotCounter = timeBetweenShots;
 
                 bulletsInMag -= 1;
-                BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, Random.Range(-inaccuracy, inaccuracy) + 5)) as BulletController;
+                BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, Random.Range(-inaccuracy, inaccuracy) + tilt)) as BulletController;
                 newBullet.speed = bulletSpeed;
                 newBullet.lifetime = range;
                 newBullet.bulletDamage = gunDamage;
+                newBullet.size = bulletSize;
             }
 
         }

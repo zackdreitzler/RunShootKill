@@ -7,10 +7,20 @@ public class BulletController : MonoBehaviour {
     public float speed;
     public float lifetime;
     public int bulletDamage;
+    public float size;
     public GameObject impactEffect;
 
-	
-	void Update () {
+
+    void Start()
+    {
+        Vector3 sizeVect;
+        sizeVect = transform.localScale;
+        sizeVect.x = size;
+        sizeVect.y = size;
+        transform.localScale = sizeVect;
+    }
+
+    void Update () {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
         lifetime -= Time.deltaTime *speed;
         if (lifetime <= 0 )

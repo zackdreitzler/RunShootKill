@@ -36,7 +36,7 @@ public class Zombie : MonoBehaviour {
         }
     }
 
-        void Rotate()
+    void Rotate()
     {
         Vector3 vectorToTarget = player.transform.position - transform.position;
         float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) + 90;
