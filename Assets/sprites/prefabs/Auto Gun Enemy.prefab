@@ -192,6 +192,7 @@ MonoBehaviour:
   health: 20
   slime: {fileID: 0}
   slimeBoss: {fileID: 0}
+  exp: 50
 --- !u!114 &114886729353454556
 MonoBehaviour:
   m_ObjectHideFlags: 1

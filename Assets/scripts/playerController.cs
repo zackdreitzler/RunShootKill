@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour {
     public float maxSpeed = 10f;
+    private int experience = 0;
     private Rigidbody2D player;
 
     // Use this for initialization
@@ -49,4 +50,9 @@ public class playerController : MonoBehaviour {
 
         
 	}
+
+    public void gainExp(int exp)
+    {
+        experience += exp;
+    }
 }

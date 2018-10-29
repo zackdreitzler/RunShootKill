@@ -77,6 +77,7 @@ public class Slime : MonoBehaviour
             slimeHealth.health = (int)size * 5;
         }
         slimeDamage = (int)size;
+        slimeHealth.exp = ((int)size / 2) + 1;
 
     }
 }

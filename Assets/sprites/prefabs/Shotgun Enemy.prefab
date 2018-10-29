@@ -208,6 +208,7 @@ MonoBehaviour:
   health: 20
   slime: {fileID: 0}
   slimeBoss: {fileID: 0}
+  exp: 50
 --- !u!212 &212222824510683470
 SpriteRenderer:
   m_ObjectHideFlags: 1

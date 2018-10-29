@@ -107,6 +107,7 @@ public class SlimeBoss : MonoBehaviour {
 
         slimeGun.gunDamage = (int)size / 2;
         slimeGun.inaccuracy = (int)size * 3;
+        slimeHealth.exp = (int)size;
        
     }
 }

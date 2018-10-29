@@ -204,6 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   slime: {fileID: 0}
+  slimeBoss: {fileID: 0}
+  exp: 30
 --- !u!114 &114899407459782778
 MonoBehaviour:
   m_ObjectHideFlags: 1
