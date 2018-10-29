@@ -7,10 +7,20 @@ public class BulletController : MonoBehaviour {
     public float speed;
     public float lifetime;
     public int bulletDamage;
+    public float size;
     public GameObject impactEffect;
 
-	
-	void Update () {
+
+    void Start()
+    {
+        Vector3 sizeVect;
+        sizeVect = transform.localScale;
+        sizeVect.x = size;
+        sizeVect.y = size;
+        transform.localScale = sizeVect;
+    }
+
+    void Update () {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
         lifetime -= Time.deltaTime *speed;
         if (lifetime <= 0 )
@@ -22,14 +32,15 @@ public class BulletController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(this.gameObject.tag == "Enemy")
+        // Is it an enemy bullet?
+        if (this.gameObject.tag == "Enemy")
         {
-            
-            // bullet impact effect
-            GameObject impact = Instantiate(impactEffect, transform.position, transform.rotation);
-            Destroy(impact, 2f);
-            Destroy(gameObject);
-            
+            // Hit Player
+            if (other.gameObject.tag == "Player")
+            {
+                other.gameObject.GetComponent<damagable>().takeDamage(bulletDamage);
+
+            }
         }
         else {
 
@@ -38,11 +49,11 @@ public class BulletController : MonoBehaviour {
             {
                 other.gameObject.GetComponent<EnemyHealth>().takeDamage(bulletDamage);
 
-                // bullet impact effect
-                GameObject impact = Instantiate(impactEffect, transform.position, transform.rotation);
-                Destroy(impact, 2f);
-                Destroy(gameObject);
             }
         }
+        // bullet impact effect
+        GameObject impact = Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(impact, 2f);
+        Destroy(gameObject);
     }
 }

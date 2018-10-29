@@ -7,6 +7,7 @@ public class Zombie : MonoBehaviour {
     public Rigidbody2D zombieRB;
     public float zombieSpeed;
     public float zombieRotateSpeed;
+    public int zombieDamage;
 
     private playerController player;
 
@@ -27,7 +28,12 @@ public class Zombie : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        //hurt player
+        // Hit Player
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<damagable>().takeDamage(zombieDamage);
+
+        }
     }
 
     void Rotate()

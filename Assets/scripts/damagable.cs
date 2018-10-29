@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class damagable : MonoBehaviour {
 
-    public float health = 100f;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public int health;
+
 	
-	// Update is called once per frame
+	
 	void Update () {
-		
+		if (health <= 0)
+        {
+            // game over
+            Debug.Log("Game Over");
+
+        }
 	}
+
+    public void takeDamage(int damage)
+    {
+        health -= damage;
+    }
 }

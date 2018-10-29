@@ -173,9 +173,11 @@ MonoBehaviour:
   timeBetweenShots: 0.5
   range: 10
   reloadTime: 2
-  gunDamage: 2
+  bulletSize: 0.15
+  gunDamage: 20
   inaccuracy: 10
   magazineSize: 20
+  tilt: 5
 --- !u!114 &114673195474770110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -189,6 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   slime: {fileID: 0}
+  slimeBoss: {fileID: 0}
+  exp: 50
 --- !u!114 &114886729353454556
 MonoBehaviour:
   m_ObjectHideFlags: 1
