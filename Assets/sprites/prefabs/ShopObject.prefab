@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4895063160733606}
   - component: {fileID: 61460889227058996}
+  - component: {fileID: 114892844451400172}
   m_Layer: 11
   m_Name: ShopObject
   m_TagString: NPC
@@ -92,7 +93,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285742089955248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92, y: -0.1, z: 0}
+  m_LocalPosition: {x: -3.2333763, y: 3.7137637, z: 0}
   m_LocalScale: {x: 1.1067, y: 1.1067, z: 1.1067}
   m_Children:
   - {fileID: 4554765627349986}
@@ -109,7 +110,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.3, y: -1.45}
@@ -125,6 +126,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.45, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114892844451400172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285742089955248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55cd12785c48544458565b5edd5e2c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPanel: {fileID: 0}
 --- !u!212 &212515127707206098
 SpriteRenderer:
   m_ObjectHideFlags: 1
