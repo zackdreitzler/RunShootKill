@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour {
 
+    public GameObject canvas;
+
     // loads up the main game screen.
     //**Right now it only loads a test environment. 
     //  This will be where we call our procedural generation of the level.**
@@ -30,4 +32,5 @@ public class ButtonFunctions : MonoBehaviour {
     {
         SceneManager.LoadScene("StartMenu");
     }
+
 }
