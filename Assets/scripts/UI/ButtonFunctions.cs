@@ -8,13 +8,13 @@ public class ButtonFunctions : MonoBehaviour {
     // loads up the main game screen.
     //**Right now it only loads a test environment. 
     //  This will be where we call our procedural generation of the level.**
-	public void LoadGame()
+	public void StartGame()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("HubWorld");
     }
 
     // Loads the load game screen
-    public void LoadLoadMenu()
+    public void LoadMenu()
     {
         SceneManager.LoadScene("LoadMenu");
     }
