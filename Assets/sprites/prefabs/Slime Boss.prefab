@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6e63dda9df9f3498953cba25858fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 1
+  size: 7
   slimeHealth: {fileID: 114688224451084366}
   slimeGun: {fileID: 114832075500772154}
   childBossSlime: {fileID: 114372773912632062}
@@ -192,6 +192,7 @@ MonoBehaviour:
   health: 30
   slime: {fileID: 0}
   slimeBoss: {fileID: 114372773912632062}
+  exp: 0
 --- !u!114 &114832075500772154
 MonoBehaviour:
   m_ObjectHideFlags: 1

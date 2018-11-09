@@ -50,7 +50,7 @@ public class SlimeBoss : MonoBehaviour {
     private void Rotation()
     {
         Vector3 vectorToTarget = player.transform.position - transform.position;
-        float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) + 90;
+        float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) + 120;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, slimeRotationSpeed * Time.deltaTime);
     }
@@ -99,7 +99,7 @@ public class SlimeBoss : MonoBehaviour {
             slimeSpeed = (16 - size) / 8;
             slimeHealth.health = (int)size * 5;
 
-            slimeGun.bulletSize = size / 15;
+            slimeGun.bulletSize = (size / 20) + 0.05f;
             slimeGun.timeBetweenShots = (10 - size) / 10;
         }
     

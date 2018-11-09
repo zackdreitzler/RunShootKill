@@ -194,9 +194,9 @@ MonoBehaviour:
   timeBetweenShots: 0
   range: 8
   reloadTime: 2
-  bulletSize: 0.1
+  bulletSize: 0.12
   gunDamage: 5
-  inaccuracy: 20
+  inaccuracy: 25
   magazineSize: 8
   tilt: 5
 --- !u!114 &114251352652649124
@@ -251,7 +251,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 5b2dbfbf16857084587adb2a4bea597f, type: 3}
-  m_Color: {r: 0.75, g: 0.848663, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.96300894, b: 0.6745283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
