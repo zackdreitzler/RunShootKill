@@ -67,11 +67,16 @@ public class Slime : MonoBehaviour
         sizeVect.y = size;
         transform.localScale = sizeVect;
 
-        if (size > 10)
+        if (size > 14)
         {
-            slimeSpeed = (16 - size) / 4;
+            slimeSpeed = (20 - size) / 4;
+        }
+        else if (size > 10)
+        {
+            slimeSpeed = (16 - size) / 5;
             slimeHealth.health = (int)size * 8;
-        } else
+        }
+        else
         {
             slimeSpeed = (16 - size) / 8;
             slimeHealth.health = (int)size * 5;

@@ -13,7 +13,8 @@ public class SlimeBoss : MonoBehaviour {
 
     public EnemyHealth slimeHealth;
     private playerController player;
-    public GunController slimeGun;
+    public GunController slimeGunA;
+    public GunController slimeGunB;
     public SlimeBoss childBossSlime;
 
 
@@ -43,7 +44,8 @@ public class SlimeBoss : MonoBehaviour {
 
         if (Vector3.Distance(player.transform.position, this.transform.position) < 10)
         {
-            slimeGun.isFiring = true;
+            slimeGunA.isFiring = true;
+            slimeGunB.isFiring = true;
         }
     }  
 
@@ -88,25 +90,35 @@ public class SlimeBoss : MonoBehaviour {
 
         if (size >= 8)
         {
-            slimeSpeed = (16 - size) / 4;
+            slimeSpeed = (20 - size) / 5;
             slimeHealth.health = (int)size * 8;
 
-            slimeGun.bulletSize = size / 2;
-            slimeGun.timeBetweenShots = (20 - size) / 50;
+            slimeGunA.bulletSize = size / 2;
+            slimeGunB.bulletSize = size / 2;
+
+            slimeGunA.timeBetweenShots = (20 - size) / 50;
+            slimeGunB.timeBetweenShots = (20 - size) / 50;
         }
         else
         {
-            slimeSpeed = (16 - size) / 8;
+            slimeSpeed = (16 - size) / 6;
             slimeHealth.health = (int)size * 5;
 
-            slimeGun.bulletSize = (size) + 0.05f;
-            slimeGun.timeBetweenShots = (10 - size) / 10;
+            slimeGunA.bulletSize = (size) + 0.05f;
+            slimeGunB.bulletSize = (size) + 0.05f;
+
+            slimeGunA.timeBetweenShots = (10 - size) / 10;
+            slimeGunB.timeBetweenShots = (10 - size) / 10;
         }
     
         slimeDamage = (int)size;
 
-        slimeGun.gunDamage = (int)size / 2;
-        slimeGun.inaccuracy = (int)size * 3;
+        slimeGunA.gunDamage = (int)size / 2;
+        slimeGunB.gunDamage = (int)size / 2;
+
+        slimeGunA.inaccuracy = (int)size * 3;
+        slimeGunB.inaccuracy = (int)size * 3;
+
         slimeHealth.exp = (int)size;
        
     }
