@@ -58,7 +58,7 @@ public class BulletController : MonoBehaviour {
         ParticleSystem.ShapeModule impactShape = impactEffect.GetComponent<ParticleSystem>().shape;
         impactShape.radius = size / 10;
         impactShape.length = size / 10;
-        impactShape.radiusSpeed = 1 - size;
+        //impactShape.radiusSpeed = 1 - size;
 
         //destroy bullet
         Destroy(impact, 2f);
