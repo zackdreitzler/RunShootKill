@@ -53,6 +53,14 @@ public class BulletController : MonoBehaviour {
         }
         // bullet impact effect
         GameObject impact = Instantiate(impactEffect, transform.position, transform.rotation);
+ 
+        // change impact based on bullet size
+        ParticleSystem.ShapeModule impactShape = impactEffect.GetComponent<ParticleSystem>().shape;
+        impactShape.radius = size / 10;
+        impactShape.length = size / 10;
+        //impactShape.radiusSpeed = 1 - size;
+
+        //destroy bullet
         Destroy(impact, 2f);
         Destroy(gameObject);
     }
