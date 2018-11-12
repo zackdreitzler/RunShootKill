@@ -12,6 +12,7 @@ public class damagable : MonoBehaviour {
 		if (health <= 0)
         {
             // game over
+            Destroy(gameObject);
             Debug.Log("Game Over");
 
         }

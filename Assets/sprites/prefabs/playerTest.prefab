@@ -91,7 +91,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9694c798d3919ce4bb05c63a77f4fe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1494846069466516, guid: 45cd807ee41e9c440b67f5a6d4ab3350, type: 2}
+  pistolRound: {fileID: 1494846069466516, guid: 45cd807ee41e9c440b67f5a6d4ab3350,
+    type: 2}
+  shotgunRound: {fileID: 0}
+  laser: {fileID: 0}
+  curr: {fileID: 0}
+  player: {fileID: 0}
+  pc: {fileID: 0}
   x: 0
   y: 0
   velocity: 0
@@ -119,6 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
+  currWep: 
+  weapon1: 
+  weapon2: 
+  weapon3: 
 --- !u!212 &212713565087411850
 SpriteRenderer:
   m_ObjectHideFlags: 1
