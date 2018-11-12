@@ -8,12 +8,14 @@ public class EnemyHealth : MonoBehaviour {
     public Slime slime;
     public SlimeBoss slimeBoss;
 
-    private playerController player;
+    private GameObject player;
+    private playerController pc;
     public int exp;
 	
-    void start()
+    void Start()
     {
-        player = FindObjectOfType<playerController>();
+        player = GameObject.FindWithTag("Player");
+        pc = player.GetComponent<playerController>();
     }
 
 	void Update () {
@@ -30,7 +32,7 @@ public class EnemyHealth : MonoBehaviour {
             }
 
             // give player experience
-            player.gainExp(exp);
+            pc.GainExp(exp);
 
             // enemy dies
             Destroy(gameObject);
