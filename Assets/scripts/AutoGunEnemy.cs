@@ -34,7 +34,7 @@ public class AutoGunEnemy : MonoBehaviour {
         if(Vector3.Distance(player.transform.position, this.transform.position) < 15)
         {
             Rotation();
-            transform.Translate(Vector3.up * AGECurrentSpeed );
+            transform.Translate(-Vector3.left * AGECurrentSpeed );
 
             // Random strafing
             AGELeftSpeed += Random.Range(-.01f, .01f) * AGEAcceleration;
@@ -95,7 +95,7 @@ public class AutoGunEnemy : MonoBehaviour {
     private void Rotation()
     {
         Vector3 vectorToTarget = player.transform.position - transform.position;
-        float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) - 90;
+        float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg);
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, AGERotateSpeed * Time.deltaTime);
     }
