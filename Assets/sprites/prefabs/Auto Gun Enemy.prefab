@@ -204,14 +204,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4c4087b130e5a458bbd9883d1979a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 114380903447743624, guid: 247097bec4f59b04c923dbed038c35dc, type: 2}
+  bullet: {fileID: 114594034305864578, guid: 247097bec4f59b04c923dbed038c35dc, type: 2}
   firePoint: {fileID: 4343878041017522}
   isFiring: 0
   bulletSpeed: 4
   timeBetweenShots: 0.5
   range: 10
   reloadTime: 2
-  bulletSize: 0.15
+  bulletSize: 2
   gunDamage: 20
   inaccuracy: 10
   magazineSize: 20

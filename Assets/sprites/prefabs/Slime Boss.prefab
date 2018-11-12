@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6e63dda9df9f3498953cba25858fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 7
+  size: 15
   slimeHealth: {fileID: 114688224451084366}
   slimeGun: {fileID: 114832075500772154}
   childBossSlime: {fileID: 114372773912632062}
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4c4087b130e5a458bbd9883d1979a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 114380903447743624, guid: 247097bec4f59b04c923dbed038c35dc, type: 2}
+  bullet: {fileID: 114594034305864578, guid: 247097bec4f59b04c923dbed038c35dc, type: 2}
   firePoint: {fileID: 4259052868963564}
   isFiring: 0
   bulletSpeed: 6
@@ -215,7 +215,7 @@ MonoBehaviour:
   gunDamage: 5
   inaccuracy: 25
   magazineSize: 35
-  tilt: 10
+  tilt: 180
 --- !u!212 &212479111398464440
 SpriteRenderer:
   m_ObjectHideFlags: 1
