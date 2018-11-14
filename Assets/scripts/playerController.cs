@@ -20,10 +20,14 @@ public class playerController : MonoBehaviour {
     public string weapon2 = "";
     public string weapon3 = "";
 
+    private string playerfile = "Player.txt";
+
     // Use this for initialization
     void Start () {
+        initPlayer();
         player = this.GetComponent<Rigidbody2D>();
         weapon1 = "pistol";
+        weapon2 = "MachineGun";
         currWep = weapon1;
 	}
 	
@@ -104,7 +108,39 @@ public class playerController : MonoBehaviour {
                 }
                 else
                 {
-                    currWep = "Shotgun";
+                    if(currWep != weapon1)
+                    {
+                        currWep = "Shotgun";
+                    }
+                    else
+                    {
+                        weapon2 = "Shotgun";
+                    }
+                   
+                }
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.name == "MachineGun")
+            {
+                if (weapon2 == "")
+                {
+                    weapon2 = "MachineGun";
+                }
+                else if (weapon3 == "")
+                {
+                    weapon3 = "MachineGun";
+                }
+                else
+                {
+                    if (currWep != weapon1)
+                    {
+                        currWep = "MachineGun";
+                    }
+                    else
+                    {
+                        weapon2 = "MachineGun";
+                    }
+
                 }
                 Destroy(collision.gameObject);
             }
@@ -114,5 +150,10 @@ public class playerController : MonoBehaviour {
     public void GainExp(int exp)
     {
         experience += exp;
+    }
+
+    private void initPlayer()
+    {
+        //read from player file to initialize
     }
 }
