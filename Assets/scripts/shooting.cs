@@ -6,7 +6,7 @@ public class shooting : MonoBehaviour {
 
     public GameObject pistolRound;
     public GameObject shotgunRound;
-    public GameObject laser;
+    public GameObject MachineGunRound;
     public GameObject curr;
     public GameObject player;
     public playerController pc;
@@ -28,14 +28,24 @@ public class shooting : MonoBehaviour {
         if(pc.currWep == "pistol")
         {
             curr = pistolRound;
+            if (Input.GetMouseButtonDown(0))
+            {
+                GameObject b = Instantiate(curr, (Vector2)transform.position + offset, Quaternion.identity);
+                b.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity * x, velocity * y);
+            }
+        }
+        if(pc.currWep == "MachineGun")
+        {
+            curr = MachineGunRound;
+            if (Input.GetMouseButton(0))
+            {
+                GameObject b = Instantiate(curr, (Vector2)transform.position + offset, Quaternion.identity);
+                b.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity * x, velocity * y);
+            }
         }
         x = Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad) * -1;
         y = Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad); 
         offset = new Vector2(.52f * x,.52f * y);
-        if(Input.GetMouseButtonDown(0))
-        {
-            GameObject b = Instantiate(curr, (Vector2)transform.position + offset, Quaternion.identity);
-            b.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity * x, velocity * y);
-        }
+       
 	}
 }

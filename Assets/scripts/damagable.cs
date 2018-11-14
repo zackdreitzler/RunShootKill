@@ -5,14 +5,15 @@ using UnityEngine;
 public class damagable : MonoBehaviour {
 
     public int health;
-
+    private string playerfile = "Player.txt";
 	
 	
 	void Update () {
 		if (health <= 0)
         {
             // game over
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            writePlayer();
             Debug.Log("Game Over");
 
         }
@@ -21,5 +22,10 @@ public class damagable : MonoBehaviour {
     public void takeDamage(int damage)
     {
         health -= damage;
+    }
+
+    private void writePlayer()
+    {
+        
     }
 }
