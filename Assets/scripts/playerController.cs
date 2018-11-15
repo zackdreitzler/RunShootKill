@@ -19,16 +19,19 @@ public class playerController : MonoBehaviour {
     public string weapon1 = "";
     public string weapon2 = "";
     public string weapon3 = "";
-
+    public GameObject weapon;
+    private PGColor wc;
     private string playerfile = "Player.txt";
 
     // Use this for initialization
     void Start () {
         initPlayer();
         player = this.GetComponent<Rigidbody2D>();
+        //childRend.color = pColor;
         weapon1 = "pistol";
         weapon2 = "MachineGun";
         currWep = weapon1;
+        wc = weapon.GetComponent<PGColor>();
 	}
 	
 	// Update is called once per frame
@@ -71,6 +74,7 @@ public class playerController : MonoBehaviour {
             if(weapon1 != "")
             {
                 currWep = weapon1;
+                wc.changeColor(weapon1);
             }
         }
         else if(Input.GetKey(switch2))
@@ -78,6 +82,7 @@ public class playerController : MonoBehaviour {
             if (weapon2 != "")
             {
                 currWep = weapon2;
+                wc.changeColor(weapon2);
             }
         }
         else if(Input.GetKey(switch3))
@@ -85,6 +90,7 @@ public class playerController : MonoBehaviour {
             if (weapon3 != "")
             {
                 currWep = weapon3;
+                wc.changeColor(weapon3);
             }
         }
 
@@ -146,6 +152,7 @@ public class playerController : MonoBehaviour {
             }
         }
     }
+
 
     public void GainExp(int exp)
     {
