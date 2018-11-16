@@ -29,7 +29,6 @@ public class playerController : MonoBehaviour {
         player = this.GetComponent<Rigidbody2D>();
         //childRend.color = pColor;
         weapon1 = "pistol";
-        weapon2 = "MachineGun";
         currWep = weapon1;
         wc = weapon.GetComponent<PGColor>();
 	}

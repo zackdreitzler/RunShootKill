@@ -135,7 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistolRound: {fileID: 1494846069466516, guid: 45cd807ee41e9c440b67f5a6d4ab3350,
     type: 2}
-  shotgunRound: {fileID: 0}
+  shotgunRound: {fileID: 1024946500855958, guid: f0a1cfff68f4ee343a02ffd44b080f5a,
+    type: 2}
   MachineGunRound: {fileID: 1633096657136282, guid: ca0dff2cad392a14c8407246af2bd1c1,
     type: 2}
   curr: {fileID: 0}
