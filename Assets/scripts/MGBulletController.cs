@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pistolBulletController : MonoBehaviour {
+public class MGBulletController : MonoBehaviour {
+
     private float lifetime;
-    private int damage = 10;
-	// Use this for initialization
-	void Start () {
+    private int damage = 1;
+    // Use this for initialization
+    void Start()
+    {
         lifetime = 20f;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         lifetime -= 1 * Time.deltaTime;
         if (lifetime <= 0)
         {
@@ -21,7 +24,7 @@ public class pistolBulletController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag != "Player")
+        if (other.gameObject.tag != "Player")
         {
             if (other.gameObject.tag == "Enemy")
             {
@@ -33,6 +36,6 @@ public class pistolBulletController : MonoBehaviour {
             }
             Destroy(gameObject);
         }
-       
+
     }
 }
