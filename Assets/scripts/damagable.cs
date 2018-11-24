@@ -6,6 +6,7 @@ public class damagable : MonoBehaviour {
 
     public int health;
     private string playerfile = "Player.txt";
+    public RectTransform healthBar;
 	
 	
 	void Update () {
@@ -22,6 +23,7 @@ public class damagable : MonoBehaviour {
     public void takeDamage(int damage)
     {
         health -= damage;
+        healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y);
     }
 
     private void writePlayer()

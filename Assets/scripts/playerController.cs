@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour {
     public float maxSpeed = 10f;
@@ -22,6 +23,7 @@ public class playerController : MonoBehaviour {
     public GameObject weapon;
     private PGColor wc;
     private string playerfile = "Player.txt";
+    public Text currencyText;
 
     // Use this for initialization
     void Start () {
@@ -93,8 +95,8 @@ public class playerController : MonoBehaviour {
             }
         }
 
-        
-	}
+        currencyText.text = money.ToString();
+    }
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -156,6 +158,7 @@ public class playerController : MonoBehaviour {
     public void GainExp(int exp)
     {
         experience += exp;
+        currencyText.text = experience.ToString();
     }
 
     private void initPlayer()
