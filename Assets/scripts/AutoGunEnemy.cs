@@ -37,7 +37,7 @@ public class AutoGunEnemy : MonoBehaviour {
             transform.Translate(-Vector3.left * AGECurrentSpeed );
 
             // Random strafing
-            AGELeftSpeed += Random.Range(-.01f, .01f) * AGEAcceleration;
+            AGELeftSpeed += Random.Range(-.005f, .005f) * AGEAcceleration;
            
             if (AGELeftSpeed > (AGEMaxSpeed / 4))
             {
@@ -58,7 +58,7 @@ public class AutoGunEnemy : MonoBehaviour {
         }
        
         // accelerate backwards
-        if (Vector3.Distance(player.transform.position, this.transform.position) < 4)
+        if (Vector3.Distance(player.transform.position, this.transform.position) < 3)
         {
             if(AGECurrentSpeed > (-AGEMaxSpeed/2))
             {
@@ -68,7 +68,7 @@ public class AutoGunEnemy : MonoBehaviour {
         }
         
         // decellerate
-        else if (Vector3.Distance(player.transform.position, this.transform.position) < 4.5 || Vector3.Distance(player.transform.position, this.transform.position) > 12)
+        else if (Vector3.Distance(player.transform.position, this.transform.position) < 3.5 || Vector3.Distance(player.transform.position, this.transform.position) > 12)
         {
             if (AGECurrentSpeed > 0)
             {
