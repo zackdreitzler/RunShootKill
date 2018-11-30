@@ -10,6 +10,7 @@ public class SlimeBoss : MonoBehaviour {
     private int slimeDamage;
     private float slimeRotationSpeed = 2;
     private float slimeSpeed;
+    private float strafe = 0;
 
     public EnemyHealth slimeHealth;
     private playerController player;
@@ -47,6 +48,20 @@ public class SlimeBoss : MonoBehaviour {
             slimeGunA.isFiring = true;
             slimeGunB.isFiring = true;
         }
+
+        // Random strafing
+        strafe += Random.Range(-.0003f, .0003f) * slimeSpeed;
+
+        if (strafe > (slimeSpeed / 4))
+        {
+            strafe -= (.0005f * slimeSpeed);
+        }
+        else if (strafe < (-slimeSpeed / 2))
+        {
+            strafe += (.0005f * slimeSpeed);
+        }
+
+        transform.Translate(Vector3.right * strafe);
     }  
 
     private void Rotation()
@@ -77,9 +92,9 @@ public class SlimeBoss : MonoBehaviour {
     // sets size, speed, and damage of slime
     private void setSlimeValues()
     {
-        if (size > 15)
+        if (size > 16)
         {
-            size = 15;
+            size = 16;
         }
 
         Vector3 sizeVect;
@@ -91,7 +106,6 @@ public class SlimeBoss : MonoBehaviour {
         if (size >= 8)
         {
             slimeSpeed = (20 - size) / 5;
-            slimeHealth.health = (int)size * 8;
 
             slimeGunA.bulletSize = size / 2;
             slimeGunB.bulletSize = size / 2;
@@ -101,8 +115,7 @@ public class SlimeBoss : MonoBehaviour {
         }
         else
         {
-            slimeSpeed = (16 - size) / 6;
-            slimeHealth.health = (int)size * 5;
+            slimeSpeed = (16 - size) / 5;
 
             slimeGunA.bulletSize = (size) + 0.05f;
             slimeGunB.bulletSize = (size) + 0.05f;
@@ -110,7 +123,9 @@ public class SlimeBoss : MonoBehaviour {
             slimeGunA.timeBetweenShots = (10 - size) / 10;
             slimeGunB.timeBetweenShots = (10 - size) / 10;
         }
-    
+
+        slimeHealth.health = (int)size * 10;
+
         slimeDamage = (int)size;
 
         slimeGunA.gunDamage = (int)size / 2;
