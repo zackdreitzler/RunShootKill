@@ -9,6 +9,12 @@ public class PlayerTextHandler : MonoBehaviour {
     private static StreamReader sr;
     private static int currency = 0;
     private static int maxHealth = 100;
+    private static int armor = 0;
+    private static string cwep = "";
+    private static string w1 = "";
+    private static string w2 = "";
+    private static string w3 = "";
+
     // Use this for initialization
 
     private void Awake()
@@ -16,7 +22,7 @@ public class PlayerTextHandler : MonoBehaviour {
         path = "Assets//files//Player.txt";
         readPlayer();
     }
-    public void writePlayer(float h, int c)
+    public void writePlayer(float h, int c, int a, string cw, string w1, string w2, string w3)
     {
         try
         {
@@ -25,8 +31,16 @@ public class PlayerTextHandler : MonoBehaviour {
             sw.WriteLine(h);
             sw.WriteLine("currency:");
             sw.WriteLine(c);
-            sw.WriteLine();
-            sw.WriteLine();
+            sw.WriteLine("armor:");
+            sw.WriteLine(a);
+            sw.WriteLine("current weapon:");
+            sw.WriteLine(cw);
+            sw.WriteLine("weapon 1:");
+            sw.WriteLine(w1);
+            sw.WriteLine("weapon 2:");
+            sw.WriteLine(w2);
+            sw.WriteLine("weapon 3:");
+            sw.WriteLine(w3);
             sw.Close();
         }
         catch { Debug.Log("could not write Player"); };
@@ -42,13 +56,28 @@ public class PlayerTextHandler : MonoBehaviour {
             Debug.Log(maxHealth);
             sr.ReadLine();
             currency = int.Parse(sr.ReadLine());
+            sr.ReadLine();
+            armor = int.Parse(sr.ReadLine());
+            sr.ReadLine();
+            cwep = sr.ReadLine();
+            sr.ReadLine();
+            w1 = sr.ReadLine();
+            sr.ReadLine();
+            w2 = sr.ReadLine();
+            sr.ReadLine();
+            w3 = sr.ReadLine();
             sr.Close();
         }
         catch { Debug.Log("could not read Player"); };
         
     }
-    
-    public int getHeatlh()
+
+    public int getArmor()
+    {
+        return armor;
+    }
+
+    public int getHealth()
     {
         return maxHealth;
     }
@@ -56,6 +85,26 @@ public class PlayerTextHandler : MonoBehaviour {
     public int getCurr()
     {
         return currency;
+    }
+
+    public string getCWep()
+    {
+        return cwep;
+    }
+
+    public string getW1()
+    {
+        return w1;
+    }
+
+    public string getW2()
+    {
+        return w2;
+    }
+
+    public string getW3()
+    {
+        return w3;
     }
 	
 }
