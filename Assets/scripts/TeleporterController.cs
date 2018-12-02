@@ -12,6 +12,7 @@ public class TeleporterController : MonoBehaviour {
         currentIndex = SceneManager.GetActiveScene().buildIndex;
 
         if (collision.gameObject.CompareTag("Player")){
+            collision.gameObject.GetComponent<damagable>().write();
             SceneManager.LoadScene(currentIndex + 1);
         }
     }
