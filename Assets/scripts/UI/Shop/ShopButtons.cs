@@ -28,6 +28,11 @@ public class ShopButtons : MonoBehaviour {
         {
             d.updateMaxHealth(5);
             player.GainExp(-100);
-        }
+        }       
+    }
+
+    public void pistolUpgrade()
+    {
+        Debug.Log("Upgrade purchased");
     }
 }
