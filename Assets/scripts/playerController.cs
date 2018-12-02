@@ -157,7 +157,6 @@ public class playerController : MonoBehaviour {
         }
     }
 
-
     public void GainExp(int exp)
     {
         experience += exp;

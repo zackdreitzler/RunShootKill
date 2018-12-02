@@ -1,6 +1,5 @@
 max health:
-120
+190
 currency:
-1146
-
+1209
 

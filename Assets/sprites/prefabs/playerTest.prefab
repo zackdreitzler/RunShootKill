@@ -305,6 +305,8 @@ GameObject:
   - component: {fileID: 4432568643924856}
   - component: {fileID: 212713565087411850}
   - component: {fileID: 50466701752229096}
+  - component: {fileID: 114640753394531706}
+  - component: {fileID: 114801643845401904}
   - component: {fileID: 114862933640651602}
   - component: {fileID: 114749449120161834}
   - component: {fileID: 114593427230441374}
