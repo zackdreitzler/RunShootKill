@@ -305,10 +305,14 @@ GameObject:
   - component: {fileID: 4432568643924856}
   - component: {fileID: 212713565087411850}
   - component: {fileID: 50466701752229096}
+  - component: {fileID: 114640753394531706}
+  - component: {fileID: 114801643845401904}
   - component: {fileID: 114862933640651602}
   - component: {fileID: 114749449120161834}
   - component: {fileID: 114593427230441374}
   - component: {fileID: 58594999514113710}
+  - component: {fileID: 114640753394531706}
+  - component: {fileID: 114801643845401904}
   m_Layer: 10
   m_Name: playerTest
   m_TagString: Player
@@ -1680,6 +1684,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114640753394531706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546366433935046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d514d5676ff56439ec9a0fee600c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114640936672753528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1831,7 +1846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec22f4a626591c419fef59920e62e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  currHealth: 100
   healthBar: {fileID: 224977304304177610}
 --- !u!114 &114758629541318172
 MonoBehaviour:
@@ -2013,6 +2028,17 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114801643845401904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546366433935046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db89a8dbf477914479953bb833588591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114810643558081758
 MonoBehaviour:
   m_ObjectHideFlags: 1
