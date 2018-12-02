@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class HealScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {	}
-	
-	// Update is called once per frame
-	void Update () { }
-
-	void OnTriggerEnter(Collider other) {
-		GameObject Player = GameObject.Find("Player");
-	
-		damagable playerhealth = currHealth.GetComponent();
-		playerhealth.currHealth += 10;
-		Destroy(GameObject);
+	public void OnTriggerEnter2D(Collider2D other) {
+		if(other.tag == "Player") {
+			Debug.Log("Heal up, loser.");
+			damagable heals = other.gameObject.GetComponent<damagable>();
+			int health = heals.currHealth;
+			print(heals.currHealth);
+			heals.currHealth = health + 10;
+			print(heals.currHealth);
+			Debug.Log("Heal done");
+			Destroy(gameObject);
+		}
 	}
 }
