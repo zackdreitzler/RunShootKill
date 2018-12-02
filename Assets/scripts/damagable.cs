@@ -7,9 +7,11 @@ public class damagable : MonoBehaviour {
 
     public int currHealth = 100;
     private int maxHealth = 100;
+    private int armor = 0;
     private static playerController pc;
     private static PlayerTextHandler pth;
     public RectTransform healthBar;
+    public RectTransform armorBar;
 
     private void Start()
     {
@@ -35,7 +37,9 @@ public class damagable : MonoBehaviour {
             Debug.Log("Game Over");
 
         }
-	}
+        healthBar.sizeDelta = new Vector2(currHealth, healthBar.sizeDelta.y);
+        armorBar.sizeDelta = new Vector2(armor, armorBar.sizeDelta.y);
+    }
 
     public void updateMaxHealth(int n)
     {
@@ -43,13 +47,29 @@ public class damagable : MonoBehaviour {
         currHealth = maxHealth;
     }
 
+    public void updateArmor(int n)
+    {
+        armor = armor + n;
+    }
+
     public void write()
     {
         this.gameObject.GetComponent<PlayerTextHandler>().writePlayer(maxHealth, pc.getXP());
     }
+
     public void takeDamage(int damage)
     {
-        currHealth -= damage;
-        healthBar.sizeDelta = new Vector2(currHealth, healthBar.sizeDelta.y);
+        
+        if(armor < 0)
+        {
+            currHealth -= damage;
+            healthBar.sizeDelta = new Vector2(currHealth, healthBar.sizeDelta.y);
+        }
+        else
+        {
+            armor -= damage;
+            armorBar.sizeDelta = new Vector2(armor, armorBar.sizeDelta.y);
+        }
+        
     }
 }
