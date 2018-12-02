@@ -52,5 +52,4 @@ public class damagable : MonoBehaviour {
         currHealth -= damage;
         healthBar.sizeDelta = new Vector2(currHealth, healthBar.sizeDelta.y);
     }
-
 }
