@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopButtons : MonoBehaviour {
-    
+    private playerController player;
+    private damagable d;
+    private void Start()
+    {
+        player = FindObjectOfType<playerController>();
+        d = FindObjectOfType<damagable>();
+    }
     public void BuyArmor()
     {
         //Decrement player currency.
@@ -13,6 +19,8 @@ public class ShopButtons : MonoBehaviour {
 
     public void BuyHealth()
     {
+        d.updateMaxHealth(10);
+        player.GainExp(-10);
         Debug.Log("Health Purchased");
     }
 

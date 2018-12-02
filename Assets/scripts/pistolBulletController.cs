@@ -7,7 +7,7 @@ public class pistolBulletController : MonoBehaviour {
     private int damage = 10;
 	// Use this for initialization
 	void Start () {
-        lifetime = 60f;
+        lifetime = 20f;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +25,11 @@ public class pistolBulletController : MonoBehaviour {
         {
             if (other.gameObject.tag == "Enemy")
             {
-                other.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
+                try
+                {
+                    other.gameObject.GetComponent<EnemyHealth>().takeDamage(damage);
+                }
+                catch { }
             }
             Destroy(gameObject);
         }

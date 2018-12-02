@@ -73,13 +73,13 @@ public class Slime : MonoBehaviour
         }
         else if (size > 10)
         {
-            slimeSpeed = (16 - size) / 5;
+            slimeSpeed = (16 - size) / 4;
             slimeHealth.health = (int)size * 8;
         }
         else
         {
-            slimeSpeed = (16 - size) / 8;
-            slimeHealth.health = (int)size * 5;
+            slimeSpeed = (16 - size) / 6;
+            slimeHealth.health = (int)size * 6;
         }
         slimeDamage = (int)size;
         slimeHealth.exp = ((int)size / 2) + 1;
