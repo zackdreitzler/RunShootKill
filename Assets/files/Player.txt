@@ -1,19 +1,16 @@
 max health:
-190
+100
 currency:
-1350
+46
 armor:
--8
+0
 current weapon:
 pistol
 weapon 1:
 pistol
 weapon 2:
-<<<<<<< HEAD
-=======
-
-weapon 3:
->>>>>>> 9c13418e11dd2269963f45caf88e4511f280d383
 
 weapon 3:
 
+pistol damage:
+5

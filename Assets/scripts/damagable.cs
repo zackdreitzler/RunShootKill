@@ -59,12 +59,12 @@ public class damagable : MonoBehaviour {
 
     public void Deathwrite()
     {
-        this.gameObject.GetComponent<PlayerTextHandler>().writePlayer(maxHealth, pc.getXP(), armor, "pistol", "pistol", "", "");
+        this.gameObject.GetComponent<PlayerTextHandler>().writePlayer(maxHealth, pc.getXP(), armor, "pistol", "pistol", "", "", pc.getpdamage());
     }
 
     public void write()
     {
-        this.gameObject.GetComponent<PlayerTextHandler>().writePlayer(maxHealth, pc.getXP(), armor, pc.currWep, pc.weapon1, pc.weapon2, pc.weapon3);
+        this.gameObject.GetComponent<PlayerTextHandler>().writePlayer(maxHealth, pc.getXP(), armor, pc.currWep, pc.weapon1, pc.weapon2, pc.weapon3, pc.getpdamage());
     }
 
     public void takeDamage(int damage)
