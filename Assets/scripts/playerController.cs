@@ -109,7 +109,7 @@ public class playerController : MonoBehaviour {
 
         if (Input.GetKey(action))
         {
-            if (collision.gameObject.name == "Shotgun")
+            if (collision.gameObject.name == "Shotgun" && !(weapon2 == "Shotgun" || weapon3 == "Shotgun"))
             {
                 if (weapon2 == "")
                 {
@@ -133,7 +133,7 @@ public class playerController : MonoBehaviour {
                 }
                 Destroy(collision.gameObject);
             }
-            else if (collision.gameObject.name == "MachineGun")
+            else if (collision.gameObject.name == "MachineGun" && !(weapon2 == "MachineGun" || weapon2 == "MachineGun"))
             {
                 if (weapon2 == "")
                 {
