@@ -14,6 +14,7 @@ public class PlayerTextHandler : MonoBehaviour {
     private static string w1 = "";
     private static string w2 = "";
     private static string w3 = "";
+    private static int pdamage = 5;
 
     // Use this for initialization
 
@@ -22,7 +23,7 @@ public class PlayerTextHandler : MonoBehaviour {
         path = "Assets//files//Player.txt";
         readPlayer();
     }
-    public void writePlayer(float h, int c, int a, string cw, string w1, string w2, string w3)
+    public void writePlayer(float h, int c, int a, string cw, string w1, string w2, string w3, int pd)
     {
         try
         {
@@ -41,6 +42,8 @@ public class PlayerTextHandler : MonoBehaviour {
             sw.WriteLine(w2);
             sw.WriteLine("weapon 3:");
             sw.WriteLine(w3);
+            sw.WriteLine("pistol damage:");
+            sw.WriteLine(pd);
             sw.Close();
         }
         catch { Debug.Log("could not write Player"); };
@@ -66,6 +69,8 @@ public class PlayerTextHandler : MonoBehaviour {
             w2 = sr.ReadLine();
             sr.ReadLine();
             w3 = sr.ReadLine();
+            sr.ReadLine();
+            pdamage = int.Parse(sr.ReadLine());
             sr.Close();
         }
         catch { Debug.Log("could not read Player"); };
@@ -107,4 +112,8 @@ public class PlayerTextHandler : MonoBehaviour {
         return w3;
     }
 	
+    public int getpdamage()
+    {
+        return pdamage;
+    }
 }

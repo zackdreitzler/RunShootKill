@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShotGunBulletController : MonoBehaviour {
 
     private float lifetime;
-    private int damage = 4;
+    private int damage = 6;
     // Use this for initialization
     void Start()
     {

@@ -15,24 +15,34 @@ public class ShopButtons : MonoBehaviour {
 
     public void BuyArmor()
     {
-        if (player.getXP() >= 50)
+        //Decrement player currency.
+        if(player.getXP() >= 50)
         {
             d.updateArmor(10);
             player.GainExp(-50);
-        }
+            Debug.Log("Armor Purchased");
+        }  
     }
 
     public void BuyHealth()
     {
-        if(player.getXP() >= 100)
+        if(player.getXP() >= 75)
         {
             d.updateMaxHealth(5);
-            player.GainExp(-100);
-        }       
+            player.GainExp(-75);
+            Debug.Log("Health Purchased");
+        }
+       
     }
 
     public void pistolUpgrade()
     {
-        Debug.Log("Upgrade purchased");
+        if(player.getXP() >= 100)
+        {
+            player.setpdamage(2);
+            player.GainExp(-100);
+            Debug.Log("Upgrade purchased");
+        }
+       
     }
 }

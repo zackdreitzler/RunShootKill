@@ -19,6 +19,7 @@ public class playerController : MonoBehaviour {
     public string weapon1 = "";
     public string weapon2 = "";
     public string weapon3 = "";
+    private int pdamage = 5;
     public GameObject weapon;
     private PGColor wc;
     public Text currencyText;
@@ -34,20 +35,20 @@ public class playerController : MonoBehaviour {
         player = this.GetComponent<Rigidbody2D>();
     }
     // Use this for initialization
-    void Start () {
-        
+    void Start() {
+
         initPlayer();
         setControls();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update() {
         bool moveup = Input.GetKey(up);
         bool movedown = Input.GetKey(down);
         bool moveleft = Input.GetKey(left);
         bool moveright = Input.GetKey(right);
         Vector3 mouse = Input.mousePosition;
-        
+
         float vertvel = 0f;
         float horvel = 0f;
 
@@ -61,29 +62,29 @@ public class playerController : MonoBehaviour {
         {
             vertvel = maxSpeed;
         }
-        if(movedown)
+        if (movedown)
         {
             vertvel = -maxSpeed;
         }
-        if(moveright)
+        if (moveright)
         {
             horvel = maxSpeed;
         }
-        if(moveleft)
+        if (moveleft)
         {
             horvel = -maxSpeed;
         }
         player.velocity = new Vector2(horvel, vertvel);
-        
-        if(Input.GetKey(switch1))
+
+        if (Input.GetKey(switch1))
         {
-            if(weapon1 != "")
+            if (weapon1 != "")
             {
                 currWep = weapon1;
                 wc.changeColor(weapon1);
             }
         }
-        else if(Input.GetKey(switch2))
+        else if (Input.GetKey(switch2))
         {
             if (weapon2 != "")
             {
@@ -91,7 +92,7 @@ public class playerController : MonoBehaviour {
                 wc.changeColor(weapon2);
             }
         }
-        else if(Input.GetKey(switch3))
+        else if (Input.GetKey(switch3))
         {
             if (weapon3 != "")
             {
@@ -105,22 +106,22 @@ public class playerController : MonoBehaviour {
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        
+
         if (Input.GetKey(action))
-        { 
-            if(collision.gameObject.name == "Shotgun")
+        {
+            if (collision.gameObject.name == "Shotgun")
             {
-                if(weapon2 == "")
+                if (weapon2 == "")
                 {
                     weapon2 = "Shotgun";
                 }
-                else if(weapon3 == "")
+                else if (weapon3 == "")
                 {
                     weapon3 = "Shotgun";
                 }
                 else
                 {
-                    if(currWep != weapon1)
+                    if (currWep != weapon1)
                     {
                         currWep = "Shotgun";
                     }
@@ -128,7 +129,7 @@ public class playerController : MonoBehaviour {
                     {
                         weapon2 = "Shotgun";
                     }
-                   
+
                 }
                 Destroy(collision.gameObject);
             }
@@ -187,7 +188,7 @@ public class playerController : MonoBehaviour {
             Debug.Log("Got s3");
         }
         catch { Debug.Log("Setting controls failed"); }
-        
+
 
 
     }
@@ -197,7 +198,7 @@ public class playerController : MonoBehaviour {
         experience = pth.getCurr();
         currWep = pth.getCWep();
         wc.changeColor(currWep);
-        if(pth.getW1() != "")
+        if (pth.getW1() != "")
         {
             weapon1 = pth.getW1();
         }
@@ -209,10 +210,21 @@ public class playerController : MonoBehaviour {
         {
             weapon3 = pth.getW3();
         }
+        pdamage = pth.getpdamage();
     }
 
     public int getXP()
     {
         return experience;
+    }
+
+    public void setpdamage(int d)
+    {
+        pdamage += d;
+    }
+
+    public int getpdamage()
+    {
+        return pdamage;
     }
 }

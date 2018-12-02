@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class pistolBulletController : MonoBehaviour {
     private float lifetime;
-    private int damage = 10;
+    private static int damage = 10;
 	// Use this for initialization
 	void Start () {
         lifetime = 20f;
@@ -34,5 +34,10 @@ public class pistolBulletController : MonoBehaviour {
             Destroy(gameObject);
         }
        
+    }
+
+    public void setDamage(int n)
+    {
+        damage = n;
     }
 }
