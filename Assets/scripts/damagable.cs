@@ -11,6 +11,7 @@ public class damagable : MonoBehaviour {
     private static playerController pc;
     private static PlayerTextHandler pth;
     public RectTransform healthBar;
+    public RectTransform armorBar;
 
     private void Start()
     {
@@ -37,7 +38,9 @@ public class damagable : MonoBehaviour {
             Debug.Log("Game Over");
 
         }
-	}
+        healthBar.sizeDelta = new Vector2(currHealth, healthBar.sizeDelta.y);
+        armorBar.sizeDelta = new Vector2(armor, armorBar.sizeDelta.y);
+    }
 
     public void updateMaxHealth(int n)
     {
@@ -69,15 +72,17 @@ public class damagable : MonoBehaviour {
 
     public void takeDamage(int damage)
     {
-        if(armor > 0)
-        {
-            armor -= damage;
-        }
-        else
+
+        if(armor < 0)
         {
             currHealth -= damage;
             healthBar.sizeDelta = new Vector2(currHealth, healthBar.sizeDelta.y);
         }
-        
+        else
+        {
+            armor -= damage;
+            armorBar.sizeDelta = new Vector2(armor, armorBar.sizeDelta.y);
+        }
+       
     }
 }
