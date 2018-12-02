@@ -25,16 +25,18 @@ public class playerController : MonoBehaviour {
     private static handleControls hc;
     private static PlayerTextHandler pth;
 
-    // Use this for initialization
-    void Start () {
+
+    private void Awake()
+    {
+        wc = weapon.GetComponent<PGColor>();
         hc = this.gameObject.GetComponent<handleControls>();
         pth = this.gameObject.GetComponent<PlayerTextHandler>();
-        initPlayer();
         player = this.GetComponent<Rigidbody2D>();
-        //childRend.color = pColor;
-        weapon1 = "pistol";
-        currWep = weapon1;
-        wc = weapon.GetComponent<PGColor>();
+    }
+    // Use this for initialization
+    void Start () {
+        
+        initPlayer();
         setControls();
 	}
 	
@@ -193,6 +195,20 @@ public class playerController : MonoBehaviour {
     {
         //read from player file to initialize
         experience = pth.getCurr();
+        currWep = pth.getCWep();
+        wc.changeColor(currWep);
+        if(pth.getW1() != "")
+        {
+            weapon1 = pth.getW1();
+        }
+        if (pth.getW2() != "")
+        {
+            weapon2 = pth.getW2();
+        }
+        if (pth.getW3() != "")
+        {
+            weapon3 = pth.getW3();
+        }
     }
 
     public int getXP()

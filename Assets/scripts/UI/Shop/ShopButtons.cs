@@ -19,9 +19,13 @@ public class ShopButtons : MonoBehaviour {
 
     public void BuyHealth()
     {
-        d.updateMaxHealth(10);
-        player.GainExp(-10);
-        Debug.Log("Health Purchased");
+        if(player.getXP() >= 100)
+        {
+            d.updateMaxHealth(10);
+            player.GainExp(-100);
+            Debug.Log("Health Purchased");
+        }
+       
     }
 
     public void pistolUpgrade()

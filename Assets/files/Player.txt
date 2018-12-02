@@ -1,5 +1,15 @@
 max health:
 190
 currency:
-1209
+1350
+armor:
+-8
+current weapon:
+pistol
+weapon 1:
+pistol
+weapon 2:
+
+weapon 3:
+
 
