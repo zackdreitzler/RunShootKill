@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class damagable : MonoBehaviour {
 
-    public int health;
-    private string playerfile = "Player.txt";
+    public int currHealth = 100;
+    private int maxHealth = 100;
+    private static playerController pc;
+    private static PlayerTextHandler pth;
     public RectTransform healthBar;
-	
-	
-	void Update () {
-		if (health <= 0)
+
+    private void Start()
+    {
+        pc = this.gameObject.GetComponent<playerController>();
+        pth = this.gameObject.GetComponent<PlayerTextHandler>();
+        maxHealth = pth.getHeatlh();
+        Debug.Log(maxHealth);
+        currHealth = maxHealth;
+    }
+
+    void Update () {
+        bool complete = false;
+        if (currHealth <= 0)
         {
-            // game over
-            gameObject.SetActive(false);
-            writePlayer();
+            if (complete == false)
+            {
+                gameObject.SetActive(false);
+                this.gameObject.GetComponent<PlayerTextHandler>().writePlayer(maxHealth, pc.getXP());
+                complete = true;
+            }
+
             Debug.Log("Game Over");
 
         }
@@ -22,12 +37,8 @@ public class damagable : MonoBehaviour {
 
     public void takeDamage(int damage)
     {
-        health -= damage;
-        healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y);
+        currHealth -= damage;
+        healthBar.sizeDelta = new Vector2(currHealth, healthBar.sizeDelta.y);
     }
 
-    private void writePlayer()
-    {
-        
-    }
 }
