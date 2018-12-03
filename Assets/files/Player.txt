@@ -1,9 +1,9 @@
 max health:
 100
 currency:
-46
+59
 armor:
-0
+-20
 current weapon:
 pistol
 weapon 1:
