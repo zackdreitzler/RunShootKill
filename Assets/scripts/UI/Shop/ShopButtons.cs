@@ -4,21 +4,45 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopButtons : MonoBehaviour {
-    
+    private playerController player;
+    private damagable d;
+
+    private void Start()
+    {
+        player = FindObjectOfType<playerController>();
+        d = FindObjectOfType<damagable>();
+    }
+
     public void BuyArmor()
     {
         //Decrement player currency.
-        Debug.Log("Armor Purchased");
+        if(player.getXP() >= 50)
+        {
+            d.updateArmor(10);
+            player.GainExp(-50);
+            Debug.Log("Armor Purchased");
+        }  
     }
 
     public void BuyHealth()
     {
-        Debug.Log("Health Purchased");
+        if(player.getXP() >= 75)
+        {
+            d.updateMaxHealth(5);
+            player.GainExp(-75);
+            Debug.Log("Health Purchased");
+        }
+       
     }
 
     public void pistolUpgrade()
     {
-        Debug.Log("Upgrade purchased");
+        if(player.getXP() >= 100)
+        {
+            player.setpdamage(2);
+            player.GainExp(-100);
+            Debug.Log("Upgrade purchased");
+        }
+       
     }
-
 }

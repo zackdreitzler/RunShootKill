@@ -1,0 +1,16 @@
+up:
+W
+left:
+A
+down:
+S
+right:
+D
+action:
+E
+switch1:
+Alpha1
+switch2:
+Alpha2
+switch3:
+Alpha3

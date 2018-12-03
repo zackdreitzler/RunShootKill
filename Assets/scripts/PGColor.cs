@@ -7,10 +7,13 @@ public class PGColor : MonoBehaviour {
     Color MGColor = new Color(238f/255, 230f/255, 53f/255, 255f/255);
     Color SGColor = new Color(32f / 255, 32f / 255, 32f / 255, 1);
     SpriteRenderer sr;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    private void Awake()
+    {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        sr.color = pColor;
+    }
+    void Start () {
+        
 	}
 	
 	// Update is called once per frame
