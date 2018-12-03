@@ -639,7 +639,11 @@ ParticleSystem:
     enabled: 1
     type: 0
     angle: 25
+<<<<<<< HEAD
     length: 0.13
+=======
+    length: 0.4
+>>>>>>> 5f5eefc81586cd8d747b5c5b16d2e2dc67050b21
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
@@ -668,7 +672,11 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
+<<<<<<< HEAD
       value: 0.13
+=======
+      value: 0.4
+>>>>>>> 5f5eefc81586cd8d747b5c5b16d2e2dc67050b21
       mode: 0
       spread: 0
       speed:

@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6e63dda9df9f3498953cba25858fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 15
+  size: 16
   slimeHealth: {fileID: 114761784098450622}
   slimeGunA: {fileID: 114098194914689020}
   slimeGunB: {fileID: 114963570124201124}

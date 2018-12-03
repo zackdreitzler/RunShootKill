@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour {
     public float maxSpeed = 10f;
@@ -14,33 +15,40 @@ public class playerController : MonoBehaviour {
     private KeyCode switch2 = KeyCode.Alpha2;
     private KeyCode switch3 = KeyCode.Alpha3;
     private KeyCode action = KeyCode.E;
-    private int money = 0;
     public string currWep = "";
     public string weapon1 = "";
     public string weapon2 = "";
     public string weapon3 = "";
+    private int pdamage = 5;
     public GameObject weapon;
     private PGColor wc;
-    private string playerfile = "Player.txt";
+    public Text currencyText;
+    private static handleControls hc;
+    private static PlayerTextHandler pth;
 
-    // Use this for initialization
-    void Start () {
-        initPlayer();
-        player = this.GetComponent<Rigidbody2D>();
-        //childRend.color = pColor;
-        weapon1 = "pistol";
-        currWep = weapon1;
+
+    private void Awake()
+    {
         wc = weapon.GetComponent<PGColor>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        hc = this.gameObject.GetComponent<handleControls>();
+        pth = this.gameObject.GetComponent<PlayerTextHandler>();
+        player = this.GetComponent<Rigidbody2D>();
+    }
+    // Use this for initialization
+    void Start() {
+
+        initPlayer();
+        setControls();
+    }
+
+    // Update is called once per frame
+    void Update() {
         bool moveup = Input.GetKey(up);
         bool movedown = Input.GetKey(down);
         bool moveleft = Input.GetKey(left);
         bool moveright = Input.GetKey(right);
         Vector3 mouse = Input.mousePosition;
-        
+
         float vertvel = 0f;
         float horvel = 0f;
 
@@ -54,29 +62,29 @@ public class playerController : MonoBehaviour {
         {
             vertvel = maxSpeed;
         }
-        if(movedown)
+        if (movedown)
         {
             vertvel = -maxSpeed;
         }
-        if(moveright)
+        if (moveright)
         {
             horvel = maxSpeed;
         }
-        if(moveleft)
+        if (moveleft)
         {
             horvel = -maxSpeed;
         }
         player.velocity = new Vector2(horvel, vertvel);
-        
-        if(Input.GetKey(switch1))
+
+        if (Input.GetKey(switch1))
         {
-            if(weapon1 != "")
+            if (weapon1 != "")
             {
                 currWep = weapon1;
                 wc.changeColor(weapon1);
             }
         }
-        else if(Input.GetKey(switch2))
+        else if (Input.GetKey(switch2))
         {
             if (weapon2 != "")
             {
@@ -84,7 +92,7 @@ public class playerController : MonoBehaviour {
                 wc.changeColor(weapon2);
             }
         }
-        else if(Input.GetKey(switch3))
+        else if (Input.GetKey(switch3))
         {
             if (weapon3 != "")
             {
@@ -93,27 +101,27 @@ public class playerController : MonoBehaviour {
             }
         }
 
-        
-	}
+        currencyText.text = experience.ToString();
+    }
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        
+
         if (Input.GetKey(action))
-        { 
-            if(collision.gameObject.name == "Shotgun")
+        {
+            if (collision.gameObject.name == "Shotgun" && !(weapon2 == "Shotgun" || weapon3 == "Shotgun"))
             {
-                if(weapon2 == "")
+                if (weapon2 == "")
                 {
                     weapon2 = "Shotgun";
                 }
-                else if(weapon3 == "")
+                else if (weapon3 == "")
                 {
                     weapon3 = "Shotgun";
                 }
                 else
                 {
-                    if(currWep != weapon1)
+                    if (currWep != weapon1)
                     {
                         currWep = "Shotgun";
                     }
@@ -121,11 +129,11 @@ public class playerController : MonoBehaviour {
                     {
                         weapon2 = "Shotgun";
                     }
-                   
+
                 }
                 Destroy(collision.gameObject);
             }
-            else if (collision.gameObject.name == "MachineGun")
+            else if (collision.gameObject.name == "MachineGun" && !(weapon2 == "MachineGun" || weapon2 == "MachineGun"))
             {
                 if (weapon2 == "")
                 {
@@ -152,14 +160,71 @@ public class playerController : MonoBehaviour {
         }
     }
 
-
     public void GainExp(int exp)
     {
         experience += exp;
+        currencyText.text = experience.ToString();
     }
 
+    private void setControls()
+    {
+        try
+        {
+            up = (KeyCode)System.Enum.Parse(typeof(KeyCode), hc.getUp());
+            Debug.Log("Got up");
+            left = (KeyCode)System.Enum.Parse(typeof(KeyCode), hc.getLeft());
+            Debug.Log("Got left");
+            down = (KeyCode)System.Enum.Parse(typeof(KeyCode), hc.getDown());
+            Debug.Log("Got down");
+            right = (KeyCode)System.Enum.Parse(typeof(KeyCode), hc.getRight());
+            Debug.Log("Got right");
+            action = (KeyCode)System.Enum.Parse(typeof(KeyCode), hc.getAction());
+            Debug.Log("Got action");
+            switch1 = (KeyCode)System.Enum.Parse(typeof(KeyCode), hc.getS1());
+            Debug.Log("Got s1");
+            switch2 = (KeyCode)System.Enum.Parse(typeof(KeyCode), hc.getS2());
+            Debug.Log("Got s2");
+            switch3 = (KeyCode)System.Enum.Parse(typeof(KeyCode), hc.getS3());
+            Debug.Log("Got s3");
+        }
+        catch { Debug.Log("Setting controls failed"); }
+
+
+
+    }
     private void initPlayer()
     {
         //read from player file to initialize
+        experience = pth.getCurr();
+        currWep = pth.getCWep();
+        wc.changeColor(currWep);
+        if (pth.getW1() != "")
+        {
+            weapon1 = pth.getW1();
+        }
+        if (pth.getW2() != "")
+        {
+            weapon2 = pth.getW2();
+        }
+        if (pth.getW3() != "")
+        {
+            weapon3 = pth.getW3();
+        }
+        pdamage = pth.getpdamage();
+    }
+
+    public int getXP()
+    {
+        return experience;
+    }
+
+    public void setpdamage(int d)
+    {
+        pdamage += d;
+    }
+
+    public int getpdamage()
+    {
+        return pdamage;
     }
 }

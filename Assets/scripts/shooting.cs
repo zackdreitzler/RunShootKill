@@ -38,6 +38,7 @@ public class shooting : MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 GameObject b = Instantiate(curr, (Vector2)transform.position + offset, Quaternion.identity);
+                b.GetComponent<pistolBulletController>().setDamage(pc.getpdamage());
                 b.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity * x, velocity * y);
             }
         }
