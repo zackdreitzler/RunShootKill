@@ -50,15 +50,15 @@ public class SlimeBoss : MonoBehaviour {
         }
 
         // Random strafing
-        strafe += Random.Range(-.0003f, .0003f) * slimeSpeed;
+        strafe += Random.Range(-.0002f, .0002f) * slimeSpeed;
 
         if (strafe > (slimeSpeed / 4))
         {
-            strafe -= (.0005f * slimeSpeed);
+            strafe -= (.0004f * slimeSpeed);
         }
         else if (strafe < (-slimeSpeed / 2))
         {
-            strafe += (.0005f * slimeSpeed);
+            strafe += (.0004f * slimeSpeed);
         }
 
         transform.Translate(Vector3.right * strafe);

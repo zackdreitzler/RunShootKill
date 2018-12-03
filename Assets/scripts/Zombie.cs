@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour {
 
-    public Rigidbody2D zombieRB;
     public float zombieSpeed;
     public float zombieRotateSpeed;
     public int zombieDamage;
