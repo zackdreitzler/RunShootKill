@@ -5,7 +5,6 @@ using UnityEngine;
 public class AutoGunEnemy : MonoBehaviour {
 
 
-    public Rigidbody2D AGERB;
     public float AGEMaxSpeed;
     public float AGEAcceleration;
     public float AGERotateSpeed;
@@ -34,8 +33,8 @@ public class AutoGunEnemy : MonoBehaviour {
         if(Vector3.Distance(player.transform.position, this.transform.position) < 15)
         {
             Rotation();
-            transform.Translate(-Vector3.left * AGECurrentSpeed );
-
+            transform.Translate(Vector3.right * AGECurrentSpeed * Time.deltaTime);
+            
             // Random strafing
             AGELeftSpeed += Random.Range(-.005f, .005f) * AGEAcceleration;
            
@@ -47,8 +46,8 @@ public class AutoGunEnemy : MonoBehaviour {
                 AGELeftSpeed += (.01f * AGEAcceleration);
             }
             
-            transform.Translate(Vector3.right * AGELeftSpeed);
-
+            transform.Translate(Vector3.up * AGELeftSpeed / 50);
+            
             if (Vector3.Distance(player.transform.position, this.transform.position) < 10)
             {
                 enemyGun.isFiring = true;
@@ -72,7 +71,7 @@ public class AutoGunEnemy : MonoBehaviour {
         {
             if (AGECurrentSpeed > 0)
             {
-                AGECurrentSpeed -= AGEAcceleration * Time.deltaTime;
+                AGECurrentSpeed -= (AGEAcceleration * Time.deltaTime);
             } else if (AGECurrentSpeed < 0)
             {
                 AGECurrentSpeed += (AGEAcceleration * Time.deltaTime);
