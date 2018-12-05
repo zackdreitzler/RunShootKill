@@ -10,6 +10,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootGameObject: {fileID: 1948230129207508}
   m_IsPrefabAsset: 1
 --- !u!1 &1525090310831900
@@ -68,6 +69,10 @@ GameObject:
   m_RootGameObject: {fileID: 0}
   m_IsPrefabAsset: 1
 >>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
+=======
+  m_RootGameObject: {fileID: 0}
+  m_IsPrefabAsset: 1
+>>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
 --- !u!1 &1716713190554934
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +81,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 4841429202615568}
+=======
+  - component: {fileID: 4867799435126664}
+>>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
 =======
   - component: {fileID: 4867799435126664}
 >>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
@@ -90,6 +99,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &1886576867747688
 GameObject:
@@ -196,6 +206,9 @@ Transform:
 =======
 --- !u!4 &4867799435126664
 >>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
+=======
+--- !u!4 &4867799435126664
+>>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,6 +221,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!23 &23372584020015852
 MeshRenderer:
@@ -244,6 +258,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+=======
+>>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
 =======
 >>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
 --- !u!23 &23825675961358768
@@ -331,6 +347,7 @@ MeshFilter:
   m_GameObject: {fileID: 1716713190554934}
   m_Mesh: {fileID: 4300000, guid: dd9264768fd42cc4dad7cfde67a5f5fa, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!33 &33560377680812916
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -338,6 +355,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1525090310831900}
   m_Mesh: {fileID: 4300000, guid: dd9264768fd42cc4dad7cfde67a5f5fa, type: 3}
+=======
+>>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
 =======
 >>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
 --- !u!114 &114121864130278884
@@ -351,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1874989c5e2da094ea00112c6a895694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!114 &114154092146054240
 MonoBehaviour:
@@ -378,6 +398,8 @@ MonoBehaviour:
   BackgroundColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 =======
 >>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
+=======
+>>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
 --- !u!114 &114397767357590012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -402,6 +424,7 @@ MonoBehaviour:
   MapWidthInPixels: 1200
   MapHeightInPixels: 1200
   BackgroundColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!114 &114671495511077322
 MonoBehaviour:
@@ -449,5 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
+=======
+>>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
 =======
 >>>>>>> 83036c0feb870fe4adfc2ae64bc72e07663e844c
