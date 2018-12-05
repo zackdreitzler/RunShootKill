@@ -11,7 +11,7 @@ public class SlowTimeScript : MonoBehaviour
         {
             Debug.Log("Go same speed bih");
             playerController slowStuff = other.gameObject.GetComponent<playerController>();
-            slowStuff.maxSpeed = 10f;
+            slowStuff.maxSpeed = 5f;
             StartCoroutine(slowTime(slowStuff));
         }
     }
@@ -32,8 +32,8 @@ public class SlowTimeScript : MonoBehaviour
         yield return new WaitForSeconds(5f);
         print(Time.time);
         Time.timeScale = 1.0f;
-        Destroy(gameObject);
         Debug.Log("Normal Time Scale");
-        
+        Destroy(gameObject);
+
     }
 }

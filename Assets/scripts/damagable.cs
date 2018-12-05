@@ -19,7 +19,6 @@ public class damagable : MonoBehaviour {
         pth = this.gameObject.GetComponent<PlayerTextHandler>();
         armor = pth.getArmor();
         maxHealth = pth.getHealth();
-        Debug.Log(maxHealth);
         currHealth = maxHealth;
     }
 

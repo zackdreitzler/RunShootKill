@@ -10,10 +10,10 @@ public class TeleporterController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         currentIndex = SceneManager.GetActiveScene().buildIndex;
-
+        Debug.Log(currentIndex);
         if (collision.gameObject.CompareTag("Player")){
             collision.gameObject.GetComponent<damagable>().write();
-            SceneManager.LoadScene(currentIndex + 1);
+            SceneManager.LoadScene(currentIndex + 2);
         }
     }
 }

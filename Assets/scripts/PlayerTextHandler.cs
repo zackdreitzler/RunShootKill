@@ -56,7 +56,6 @@ public class PlayerTextHandler : MonoBehaviour {
             sr = new StreamReader(path, true);
             sr.ReadLine();
             maxHealth = int.Parse(sr.ReadLine());
-            Debug.Log(maxHealth);
             sr.ReadLine();
             currency = int.Parse(sr.ReadLine());
             sr.ReadLine();
